@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   standalone: true,
   selector: 'app-root',
   imports: [
-    HeroesComponent
+    HeroesComponent,
+    FormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -14,4 +16,3 @@ import { HeroesComponent } from './heroes/heroes.component';
 export class AppComponent {
   title = 'Tour of Heroes';
 }
-  
