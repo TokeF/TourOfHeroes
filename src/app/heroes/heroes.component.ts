@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HeroService } from '../hero.service';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { MessageService } from '../message.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -15,6 +16,7 @@ import { MessageService } from '../message.service';
     NgFor,
     NgIf,
     HeroDetailComponent,
+    RouterLink
   ],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.css'
@@ -24,11 +26,6 @@ export class HeroesComponent {
   selectedHero?: Hero;
 
   constructor(private heroService: HeroService, private messageService: MessageService) {}
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
 
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => this.heroes =   heroes);;
